@@ -1,0 +1,31 @@
+def graficar_2_indiferencias(x_1,x_2,x_1_prima,x_2_prima,m,m_prima,p1,p2,p1_prima,p2_prima):
+    x=np.arange(0.0, 250, 10)
+    y_1=m/p2-(p1*x/p2)
+    y_2=m_prima/p2_prima-(p1_prima*x/p2_prima)
+    fig = plt.figure(figsize=(4,4))
+    ax = fig.add_subplot(1,1,1)
+    ax.plot(x1_vec,x2_vec, color = 'red')
+    ax.plot(x1_vec_prima,x2_vec_prima, color = 'red')
+    plt.plot(x, y_1)
+    plt.plot(x, y_2)
+    plt.text(x_1, x_2, f'({x_1}, {x_2})', ha='right', va='bottom', color='green', fontsize=10)
+    plt.scatter(x_1, x_2, color='green', marker='o', label='Cesta de consumo elegida‹')
+    plt.text(x_1_prima, x_2_prima, f'({x_1_prima}, {x_2_prima})', ha='right', va='bottom', color='green', fontsize=10)
+    plt.scatter(x_1_prima, x_2_prima, color='green', marker='o', label='Cesta de consumo elegida‹')
+    ax.set_xlabel('$x_1$')
+    ax.set_ylabel('$x_2$')
+    if m > m_prima:
+      limite = m  # Si es verdadero, asignamos el valor de m a la variable límite
+    else:
+      limite = m_prima  # Si es falso, asignamos el valor de m_prima a la variable límite
+    if  p1 < p1_prima:
+      p1_definitivo = p1  # Si es verdadero, asignamos el valor de m a la variable límite
+    else:
+      p1_definitivo = p1_prima
+    if  p2 < p2_prima:
+      p2_definitivo = p2  # Si es verdadero, asignamos el valor de m a la variable límite
+    else:
+      p2_definitivo = p2_prima
+    ax.set_xlim([0,limite/p1_definitivo])
+    ax.set_ylim([0,limite/p2_definitivo])
+    ax.grid(True)
