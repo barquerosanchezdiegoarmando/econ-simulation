@@ -1,15 +1,20 @@
 # setup.py
-
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name="econ-simulation",
-    version="1.0.0",
-    python_requires=">=3.6"
-    author="Diego Armando Barquero Sanchez",
-    author_email="barquerosanchezdiego@gmail.com",
-    description="Una libreria simple en pre-alpha creada para facilitar la computacion y ploteo de ejercicio microeconomicos",
-    url="https://github.com/barquerosanchezdiegoarmando/econ-simulation",
-    packages=[",'pandas','numpy','scipy','scipy.optimize','matplotlib.pyplot'"],
-    install_requires=["google-colab"],
+    name='econsimulation',
+    version='0.1.0',
+    packages=find_packages(),
+    install_requires=[
+        'matplotlib',
+        'scipy',
+        'numpy',
+        'pandas',
+        'google-colab'
+    ],
+    entry_points={
+        'console_scripts': [
+            # Puedes agregar scripts ejecutables aquí si es necesario
+        ],
+    },
 )
