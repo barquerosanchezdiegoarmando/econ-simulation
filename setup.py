@@ -10,6 +10,6 @@ setup(
     author_email="barquerosanchezdiego@gmail.com",
     description="Una libreria simple en pre-alpha creada para facilitar la computacion y ploteo de ejercicio microeconomicos",
     url="https://github.com/barquerosanchezdiegoarmando/econ-simulation",
-    packages=["econ-simulation"],
-    install_requires=["google-colab",'pandas','numpy','scipy','scipy.optimize','matplotlib.pyplot'],
+    packages=[",'pandas','numpy','scipy','scipy.optimize','matplotlib.pyplot'"],
+    install_requires=["google-colab"],
 )
