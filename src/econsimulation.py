@@ -13,3 +13,4 @@ def max_utilidad_cobb_douglas(alpha,beta,m,p1,p2,do_print=True):
   utilidad = optimo[0]**(alpha)*optimo[1]**(beta)
 
   return print('La canasta de bienes que maximiza la utilidad de consumidor es (', optimo[0],',', optimo[1],'), con U =', utilidad)
+  
