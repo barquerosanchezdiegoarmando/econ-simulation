@@ -1,15 +1,15 @@
-# setup.py
 from setuptools import setup, find_packages
 
 setup(
-    name='econsimulation',
-    version='0.1.0',
+    name="econsimulation",
+    version="0.0.1",
     packages=find_packages(),
-    py_modules=['econsimulation.py']
     install_requires=[
-        'matplotlib',
-        'scipy',
-        'numpy',
-        'pandas',
-        'google-colab'
-    ])
+        "pandas",
+        "numpy",
+        "scipy",
+        "matplotlib",
+        "google-colab",
+    ],
+    py_modules=["econsimulation"],
+)
