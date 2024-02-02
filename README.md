@@ -52,6 +52,11 @@ Output
 La canasta de bienes que maximiza la utilidad de consumidor es ( 119.99995118859513 , 20.000016270468286 ), con U = 287999.99999985704
 ```
 
+
+## Bibliografía:
+Universidad de Coppenaghen material NumeEcon: https://numeconcopenhagen.netlify.app/lectures/
+Cristian Camilo Moreno - Ejercicio de teoría del consumidor: https://ccamilocristian.github.io/posts/optimizacion_teoria_consumidor/
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
