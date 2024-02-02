@@ -36,10 +36,21 @@ Primeramente llamamos a la librería y le ponemos el pseudonimo "es" por practic
 import econsimulation as es
 ```
 A continuación llamamos a la librería por su pseudonimo "es" y utilizamos la función max_utilidad_cobb_douglas()
+Input
 ```python
 es.max_utilidad_cobb_douglas(alpha=2,beta=1,m=180,p1=1,p2=3)
 ```
-
+Explicación de los parámetros
+- alpha: Exponente asociacido al bien 1
+- beta: Exponente asociado al bien 2
+- m: Presupuestos
+- p1: Precio del bien 1
+- p2: Precio del bien 2
+  
+Output
+```python
+La canasta de bienes que maximiza la utilidad de consumidor es ( 119.99995118859513 , 20.000016270468286 ), con U = 287999.99999985704
+```
 
 ## License
 
