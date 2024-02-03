@@ -52,6 +52,39 @@ Output
 La canasta de bienes que maximiza la utilidad de consumidor es ( 119.99995118859513 , 20.000016270468286 ), con U = 287999.99999985704
 ```
 
+# curva_indiferencia_tangente()
+
+Primero vamos a crear dos variables que para el ejemplo las nombraremos "x1_vex" y "x2_vec", llamamos a la librería por su pseudonimo "es" y utilizamos la función curva_indiferencia_tangente(). Lo que estamos guardando en las variables son los pares ordenados que forman a la curva de indiferencia que maximiza la utilidad del consumidor y que es tangente a la RMS
+Input
+```python
+x1_vec,x2_vec = es.curva_indiferencia_tangente(y1=120,y2=20,alpha=2,beta=1,N=1000,x2_max=60)
+```
+Explicación de los parámetros
+- y1: Cantidad elejida del bien 1
+- y2: Cantidad elejida del bien 2
+- alpha: Exponente asociado al bien 1
+- beta: Exponente asociado al bien 2
+- N: Números necesarios para graficar, recomendado "1000"
+- x2_max: Máxima cantidad que el consumidor/productor, se obtiene de dividir m/p2
+
+Si gustas ver lo que se guarda en las variables creadas, puedes colocarlas en un dataframe y ver la tabla
+Input
+```python
+import matplotlib.pyplot as pltr
+import pandas as pd
+
+df= pd.DataFrame([x1_vec, x2_vec])
+print(df)
+```
+
+Output 
+![Captura](https://github.com/barquerosanchezdiegoarmando/econsimulation/assets/126104692/5f12cccf-8dca-4449-9a23-54262be6dd1d)
+
+Genial! Ahora vamos a graficarlo adecuadamente como en los libros de Microeconomía(Varian, Pearson etc...) para ello utilizaremos la siguiente función.
+
+# graficar_indiferencia()
+
+
 
 ## Bibliografía:
 Universidad de Coppenaghen material NumeEcon: https://numeconcopenhagen.netlify.app/lectures/
