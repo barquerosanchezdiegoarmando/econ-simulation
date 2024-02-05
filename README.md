@@ -26,7 +26,8 @@ pip install git
 ## Uso y explicación de las funciones disponibles
 Para ello emplearemos el siguiente ejercicio Microeconómico. 
 
-![imagen_ecuacion](https://github.com/barquerosanchezdiegoarmando/econsimulation/assets/126104692/842d3304-85fe-4692-9f01-b5c65f39084b)
+![Captura](https://github.com/barquerosanchezdiegoarmando/econsimulation/assets/126104692/536ce73e-c5c9-41a5-9f39-9e0e1498f120)
+
 
 Para confirmar que la elección del consumidor es 120,20 del bien 1 y el bien 2 respectivamente, utilizaremos la librería econsimulation y la función max_utilidad_cobb_douglas(alpha,beta,m,p1,p2)
 
@@ -83,7 +84,77 @@ Output
 Genial! Ahora vamos a graficarlo adecuadamente como en los libros de Microeconomía(Varian, Pearson etc...) para ello utilizaremos la siguiente función.
 
 # graficar_indiferencia()
+Es una función que emplea los datos del ejercicio y las variables x1_vec y x2_vec.
 
+Input
+```python
+es.graficar_indiferencia(x_1=120,x_2=20,m=180,p1=1,p2=3,x1_vec=x1_vec,x2_vec=x2_vec)
+```
+Explicación de los parámetros
+- x_1: Cantidad que maximiza la utilidad del bien 1
+- x_2: Cantidad que maximiza la utilidad del bien 2
+- m: Presupuesto
+- p1: Precio del bien 1
+- p2: Precio del bien 2
+- x1_vec: Vector del bien 1
+- x2_vec: Vector del bien 2
+
+Output
+
+![descarga](https://github.com/barquerosanchezdiegoarmando/econsimulation/assets/126104692/501b8620-cec7-467d-877e-4e55a88350ab)
+
+Ahora si quisieramos ver el epsilon dado un cambio en alguna de las condiciones iniciales, entiéndase presupuesto, precios, preferencias. 
+
+![descarga](https://github.com/barquerosanchezdiegoarmando/econsimulation/assets/126104692/5fef75cc-20da-4a37-99de-1a90a0a9cea5)
+
+Primeramente debemos realizar la maximizamización de la utilidad dado el cambio en el precio del bien 1. 
+
+Input
+```python
+es.max_utilidad_cobb_douglas(alpha=2,beta=1,m=180,p1=2,p2=3)
+```
+Output
+```python
+La canasta de bienes que maximiza la utilidad de consumidor es ( 59.99999778305689 , 20.00000147796207 ), con U = 71999.9999999997
+```
+
+Una vez obtenido el resultado del par ordenado que maximiza la utilidad debemos obtener los vectores de la curva de indiferencia tangente a la RMS. Para ello emplearemos la función de curva_indiferencia_tangente() para encontrar a la curva de indiferencia prima. 
+
+Input
+```python
+x1_vec_prima,x2_vec_prima = es.curva_indiferencia_tangente(y1=60,y2=20,alpha=2,beta=1,N=1000,x2_max=60)
+```
+
+Ya teniendo lo anterior, emplearemos la siguiente función que es una ampliación de graficar_indiferencia()
+
+# graficar_2_indiferencias()
+
+Input
+```python
+es.graficar_2_indiferencias(x_1=120,x_2=20,x_1_prima=60,x_2_prima=20,m=180,m_prima=180,p1=1,p2=3,p1_prima=2,p2_prima=3,x1_vec=x1_vec,x2_vec=x2_vec,x1_vec_prima=x1_vec_prima,x2_vec_prima=x2_vec_prima)
+```
+
+Importante aclaración, en caso de que alguna cosa no cambie entonces el dato original debe mantenerse para que el grafico se realice de forma adecuada. 
+
+Explicación de los parámetros
+- x_1: Cantidad que maximiza la utilidad del bien 1 originalmente 
+- x_2: Cantidad que maximiza la utilidad del bien 2 originalmente
+- x_1_prima: Cantidad que maximiza la utilidad del bien 1 post cambio 
+- x_2_prima: Cantidad que maximiza la utilidad del bien 2  post cambio 
+- m: Presupuesto original
+- m_prima: Presupuesto post cambio
+- p1: Precio del bien 1
+- p2: Precio del bien 2
+- p1_prima: Precio del bien 1 post cambio
+- p2_prima: Precio del bien 2 post cambio
+- x1_vec: Vector del bien 1 original
+- x2_vec: Vector del bien 2 original
+- x1_vec_prima: Vector del bien 1 post cambio
+- x2_vec_prima: Vector del bien 2 post cambio
+  
+Output
+
+![Captura](https://github.com/barquerosanchezdiegoarmando/econsimulation/assets/126104692/63712aed-eb87-4357-a7a8-d9f9c60a996b)
 
 
 ## Bibliografía:
