@@ -21,7 +21,7 @@ pip install git
 ```
 
 ```bash
-%cd econsiulation
+%cd econsimulation
 ```
 ## Uso y explicación de las funciones disponibles
 Para ello emplearemos el siguiente ejercicio Microeconómico. 
