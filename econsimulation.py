@@ -98,6 +98,8 @@ def graficar_2_indiferencias(x_1,x_2,x_1_prima,x_2_prima,m,m_prima,p1,p2,p1_prim
     ax.grid(True)
 
 
+
+
 def graficar_indiferencias_sin_restricción(x_1,x_2, x_1_prima, x_2_prima,p1,p2,x1_vec,x2_vec,x1_vec_prima,x2_vec_prima):
   x=np.arange(0.0, 250, 10)
   fig = plt.figure(figsize=(4,4))
