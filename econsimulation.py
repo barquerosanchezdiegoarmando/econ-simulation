@@ -96,3 +96,22 @@ def graficar_2_indiferencias(x_1,x_2,x_1_prima,x_2_prima,m,m_prima,p1,p2,p1_prim
     ax.set_xlim([0,limite/p1_definitivo])
     ax.set_ylim([0,limite/p2_definitivo])
     ax.grid(True)
+
+
+def graficar_indiferencias_sin_restricción(x_1,x_2, x_1_prima, x_2_prima,p1,p2,x1_vec,x2_vec,x1_vec_prima,x2_vec_prima):
+  x=np.arange(0.0, 250, 10)
+  fig = plt.figure(figsize=(4,4))
+  ax = fig.add_subplot(1,1,1)
+  ax.plot(x1_vec,x2_vec, color = 'red')
+  plt.text(x_1, x_2, f'({x_1}, {x_2})', ha='right', va='bottom', color='green', fontsize=10)
+  plt.scatter(x_1, x_2, color='green', marker='o', label='Cesta de consumo elegida‹')
+  ax.plot(x1_vec_prima,x2_vec_prima, color = 'red')
+  plt.text(x_1, x_2, f'({x_1}, {x_2})', ha='right', va='bottom', color='green', fontsize=10)
+  plt.scatter(x_1, x_2, color='green', marker='o', label='Cesta de consumo elegida‹')
+  plt.text(x_1_prima, x_2_prima, f'({x_1_prima}, {x_2_prima})', ha='right', va='bottom', color='green', fontsize=10)
+  plt.scatter(x_1_prima, x_2_prima, color='green', marker='o', label='Cesta de consumo elegida‹')
+  ax.set_xlabel('$x_1$')
+  ax.set_ylabel('$x_2$')
+  ax.set_xlim([0,x_1+20])
+  ax.set_ylim([0,x_2+20])
+  ax.grid(True)
