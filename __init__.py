@@ -1,1 +1,1 @@
-from .econsimulation import max_utilidad_cobb_douglas,curva_indiferencia_tangente,graficar_indiferencia,graficar_2_indiferencias
+from .econsimulation import max_utilidad_cobb_douglas,curva_indiferencia_tangente,graficar_indiferencia,graficar_2_indiferencias,graficar_indiferencias_sin_restricción
