@@ -1,7 +1,7 @@
 #  econ-simulation
 ![1707097273460](https://github.com/barquerosanchezdiegoarmando/econsimulation/assets/126104692/b1fbc28b-4960-4aaa-a2cc-d7a08fd2b6b4)
 
-Es una librería en étapas tempranas tiene la intención de facilitarle la realización de ejercicios microeconómicos. Disponible tanto en Gooogle Colab como en JupyterNotebook.
+Es una librería en étapas tempranas tiene la intención de facilitarle la realización de ejercicios microeconómicos. Disponible tanto en Google Colab como en JupyterNotebook.
 
 Creador: Diego Armando Barquero Sánchez 
 
