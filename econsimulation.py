@@ -117,3 +117,49 @@ def graficar_indiferencias_sin_restricción(x_1,x_2, x_1_prima, x_2_prima,p1,p2,
   ax.set_xlim([0,x_1+20])
   ax.set_ylim([0,x_2+20])
   ax.grid(True)
+
+
+
+def graficar_5_rectaspresupueatrias(x_1,x_2,x_1_prima,x_2_prima,x_1_prima1,x_2_prima1,x_1_prima2,x_2_prima2,x_1_prima3,x_2_prima3,m,m_prima,m_prima1,m_prima2,m_prima3,p1,p1_prima,p1_prima1,p1_prima2,p1_prima3,
+                            p2,p2_prima,p2_prima1,p2_prima2,p2_prima3):
+    plt.figure(figsize=(20,10))
+    x=np.arange(0.0, 250, 10)
+    y_1=m/p2-(p1*x/p2)
+    y_2=m_prima/p2_prima-(p1_prima*x/p2_prima)
+    y_3=m_prima1/p2_prima1-(p1_prima1*x/p2_prima1)
+    y_4=m_prima2/p2_prima2-(p1_prima2*x/p2_prima2)
+    y_5=m_prima3/p2_prima3-(p1_prima3*x/p2_prima3)
+    fig = plt.figure(figsize=(4,4))
+    ax = fig.add_subplot(1,1,1)
+    plt.plot(x, y_1)
+    plt.plot(x, y_2)
+    plt.plot(x, y_3)
+    plt.plot(x, y_4)
+    plt.plot(x, y_5)
+    plt.text(x_1, x_2, f'({x_1}, {x_2})', ha='right', va='bottom', color='green', fontsize=10)
+    plt.scatter(x_1, x_2, color='green', marker='o', label='Cesta de consumo elegida‹')
+    plt.text(x_1_prima, x_2_prima, f'({x_1_prima}, {x_2_prima})', ha='right', va='bottom', color='green', fontsize=10)
+    plt.text(x_1_prima1, x_2_prima1, f'({x_1_prima1}, {x_2_prima1})', ha='right', va='bottom', color='green', fontsize=10)
+    plt.text(x_1_prima2, x_2_prima2, f'({x_1_prima2}, {x_2_prima2})', ha='right', va='bottom', color='green', fontsize=10)
+    plt.text(x_1_prima3, x_2_prima3, f'({x_1_prima3}, {x_2_prima3})', ha='right', va='bottom', color='green', fontsize=10)
+    plt.scatter(x_1_prima, x_2_prima, color='green', marker='o', label='Cesta de consumo elegida‹')
+    plt.scatter(x_1_prima1, x_2_prima1, color='green', marker='o', label='Cesta de consumo elegida‹')
+    plt.scatter(x_1_prima2, x_2_prima2, color='green', marker='o', label='Cesta de consumo elegida‹')
+    plt.scatter(x_1_prima3, x_2_prima3, color='green', marker='o', label='Cesta de consumo elegida‹')
+    ax.set_xlabel('$x_1$')
+    ax.set_ylabel('$x_2$')
+    if m > m_prima:
+      limite = m  # Si es verdadero, asignamos el valor de m a la variable límite
+    else:
+      limite = m_prima  # Si es falso, asignamos el valor de m_prima a la variable límite
+    if  p1 < p1_prima:
+      p1_definitivo = p1  # Si es verdadero, asignamos el valor de m a la variable límite
+    else:
+      p1_definitivo = p1_prima
+    if  p2 < p2_prima:
+      p2_definitivo = p2  # Si es verdadero, asignamos el valor de m a la variable límite
+    else:
+      p2_definitivo = p2_prima
+    ax.set_xlim([0,limite/p1_definitivo])
+    ax.set_ylim([0,limite/p2_definitivo])
+    ax.grid(True)
